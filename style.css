@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to right, #f0f4f8, #dfe9f3);
+    color: #333;
+}
+header {
+    background-color: #2980b9;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+header h2 {
+    margin-top: 10px;
+    font-weight: normal;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+.content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.puzzle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px;
+}
+.piece {
+    width: 120px;
+    height: 120px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: appear 1s forwards;
+}
+.piece:nth-child(1) { animation-delay: 0.5s; }
+.piece:nth-child(2) { animation-delay: 1s; }
+.piece:nth-child(3) { animation-delay: 1.5s; }
+.piece:nth-child(4) { animation-delay: 2s; }
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+.puzzle-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-top: 40px;
+}
+
+.puzzle-piece {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25% 25% 25% 25%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 1.5s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+}
+
+.familia { background-color: #1f4fff; }
+.escola  { background-color: #ffd700; color: #000; }
+.parceria { background-color: #ff3b3b; }
+.sucesso { background-color: #28a745; }
+
+.familia   { top: -150px; left: -150px; }
+.escola    { top: -150px; left: 300px; }
+.parceria  { top: 300px; left: -150px; }
+.sucesso   { top: 300px; left: 300px; }
+
+.puzzle-piece::before,
+.puzzle-piece::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: inherit;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Encaixe superior */
+.familia::before {
+    top: -20px;
+    left: 45px;
+}
+.familia::after {
+    left: -20px;
+    top: 45px;
+}
+
+/* Encaixe direito */
+.escola::before {
+    top: -20px;
+    left: 45px;
+}
+.escola::after {
+    right: -20px;
+    top: 45px;
+}
+
+/* Encaixe inferior */
+.parceria::before {
+    bottom: -20px;
+    left: 45px;
+}
+.parceria::after {
+    left: -20px;
+    top: 45px;
+}
+
+/* Encaixe direito */
+.sucesso::before {
+    bottom: -20px;
+    left: 45px;
+}
+.sucesso::after {
+    right: -20px;
+    top: 45px;
+}
