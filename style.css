@@ -5,161 +5,189 @@ body {
     background: linear-gradient(to right, #f0f4f8, #dfe9f3);
     color: #333;
 }
+
+/* Header */
 header {
     background-color: #2980b9;
     color: white;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
+    border-bottom: 5px solid #1d6fa5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
 }
+
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: 700;
 }
+
 header h2 {
     margin-top: 10px;
     font-weight: normal;
+    font-size: 1.5rem;
 }
+
+/* Main Content */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 40px 20px;
-}
-.content {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    max-width: 700px;
-    text-align: center;
-    margin-bottom: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: -60px; /* Ajuste o valor aqui se necessário */
 }
-.content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-.puzzle {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 600px;
-}
-.piece {
-    width: 120px;
-    height: 120px;
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    opacity: 0;
-    transform: scale(0.5);
-    animation: appear 1s forwards;
-}
-.piece:nth-child(1) { animation-delay: 0.5s; }
-.piece:nth-child(2) { animation-delay: 1s; }
-.piece:nth-child(3) { animation-delay: 1.5s; }
-.piece:nth-child(4) { animation-delay: 2s; }
 
-@keyframes appear {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+
+/* Footer */
 footer {
     background-color: #f1f1f1;
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
     color: #666;
-}
-.puzzle-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
     margin-top: 40px;
+    border-top: 1px solid #ddd;
 }
 
+/* Puzzle Container */
+.puzzle-container {
+    position: relative;
+    width: 440px;
+    height: 440px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Peças do Quebra-Cabeça */
 .puzzle-piece {
     position: absolute;
-    width: 130px;
-    height: 130px;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
+    width: 220px;
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 25% 25% 25% 25%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    transition: all 1.5s ease-in-out;
     opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.familia {
+    background-color: #1f4fff;
+    top: 0;
+    left: 0;
+}
+
+.escola {
+    background-color: #ffd700;
+    top: 0;
+    left: 220px;
+}
+
+.parceria {
+    background-color: #ff3b3b;
+    top: 220px;
+    left: 0;
+}
+
+.sucesso {
+    background-color: #28a745;
+    top: 220px;
+    left: 220px;
+}
+
+/* Ajuste das bordas para encaixe perfeito */
+.familia::before,
+.escola::before,
+.parceria::before,
+.sucesso::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: inherit;
+}
+
+.familia::before {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: inherit;
+    border-radius: 0 0 50% 50%;
+    z-index: 2;
+}
+
+.escola::before {
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: inherit;
+    border-radius: 50% 0 0 50%;
+}
+
+.parceria::before {
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: inherit;
+    border-radius: 0 50% 50% 0;
     z-index: 1;
 }
 
-.familia { background-color: #1f4fff; }
-.escola  { background-color: #ffd700; color: #000; }
-.parceria { background-color: #ff3b3b; }
-.sucesso { background-color: #28a745; }
-
-.familia   { top: -150px; left: -150px; }
-.escola    { top: -150px; left: 300px; }
-.parceria  { top: 300px; left: -150px; }
-.sucesso   { top: 300px; left: 300px; }
-
-.puzzle-piece::before,
-.puzzle-piece::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: inherit;
-    border-radius: 50%;
-    z-index: -1;
-}
-
-/* Encaixe superior */
-.familia::before {
-    top: -20px;
-    left: 45px;
-}
-.familia::after {
-    left: -20px;
-    top: 45px;
-}
-
-/* Encaixe direito */
-.escola::before {
-    top: -20px;
-    left: 45px;
-}
-.escola::after {
-    right: -20px;
-    top: 45px;
-}
-
-/* Encaixe inferior */
-.parceria::before {
-    bottom: -20px;
-    left: 45px;
-}
-.parceria::after {
-    left: -20px;
-    top: 45px;
-}
-
-/* Encaixe direito */
 .sucesso::before {
-    bottom: -20px;
-    left: 45px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: inherit;
+    border-radius: 50% 50% 0 0;
+    z-index: 1;
 }
-.sucesso::after {
-    right: -20px;
-    top: 45px;
+
+.welcome-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 0 auto;
+}
+
+.welcome-text p {
+    margin-bottom: 15px;
+}
+
+.welcome-text p:first-child {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #2980b9; /* Cor do texto principal */
+}
+
+.welcome-text p:last-child {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555; /* Cor para a segunda parte */
 }
