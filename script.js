@@ -1,22 +1,22 @@
 window.onload = () => {
     const familia = document.querySelector('.familia');
     const escola = document.querySelector('.escola');
-    const parceria = document.querySelector('.parceria');
-    const sucesso = document.querySelector('.sucesso');
+    const alunos = document.querySelector('.alunos');
+    const professores = document.querySelector('.professores');
 
     setTimeout(() => {
-        familia.style.opacity = 1;  // Inicia a animação
+        familia.classList.add('show');
     }, 500);
 
     setTimeout(() => {
-        escola.style.opacity = 1;
+        escola.classList.add('show');
     }, 1000);
 
     setTimeout(() => {
-        parceria.style.opacity = 1;
+        alunos.classList.add('show');
     }, 1500);
 
     setTimeout(() => {
-        sucesso.style.opacity = 1;
+        professores.classList.add('show');
     }, 2000);
 };
