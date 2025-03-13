@@ -25,6 +25,7 @@ header h1 {
 
 header h2 {
     margin-top: 10px;
+    margin-top: 25px;
     font-weight: normal;
     font-size: 1.5rem;
 }
@@ -58,8 +59,8 @@ footer {
 /* Puzzle Container */
 .puzzle-container {
     position: relative;
-    width: 440px;
-    height: 440px;
+    width: 360px;
+    height: 360px;
     margin-top: 40px;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -68,13 +69,13 @@ footer {
 /* Peças do Quebra-Cabeça */
 .puzzle-piece {
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: 180px; /* Alterado de 220px para 180px */
+    height: 180px; /* Alterado de 220px para 180px */
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     opacity: 1; /* Ajuste a opacidade para 1 para garantir que as peças sejam visíveis */
@@ -83,26 +84,22 @@ footer {
 
 .familia {
     background-color: #1f4fff;
-    top: 0;
-    left: 0;
 }
 
 .escola {
     background-color: #ffd700;
-    top: 0;
-    left: 220px;
+    left: 180px;
 }
 
 .alunos {
     background-color: #ff3b3b;
-    top: 220px;
-    left: 0;
+    top: 180px;
 }
 
 .professores {
     background-color: #28a745;
-    top: 220px;
-    left: 220px;
+    top: 180px; /* Ajustado para centralizar */
+    left: 180px; /* Ajustado para centralizar */
 }
 
 /* Ajuste das bordas para encaixe perfeito */
